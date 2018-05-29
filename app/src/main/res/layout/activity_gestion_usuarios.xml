@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GestionUsuariosActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnInsertar"
+        android:text="Insertar Usuario"/>
+
+    <Button
+        android:id="@+id/btnConsultarUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnInsertar"
+        android:text="Consultar Usuarios" />
+
+    <Button
+        android:id="@+id/btnListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnConsultarUsuarios"
+        android:text="Consultar Usuarios" />
+
+
+
+</RelativeLayout>

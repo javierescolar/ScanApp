@@ -13,40 +13,94 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="198dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="Referencia"
+        android:inputType="text"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="32dp" />
 
-    <EditText
-        android:id="@+id/textUnidades"
-        android:layout_width="119dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="146dp"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp"
-        android:text="Unidades:" />
-
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnComprobar"
         android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="221dp"
-        android:text="Guardar" />
+        android:layout_marginBottom="200dp"
+        android:text="Comprobar" />
+
+    <TextView
+        android:id="@+id/textTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="Inventario"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/labelTienda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="54dp"
+        android:text="Tienda:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textTienda"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/labelTienda"
+        android:layout_marginStart="129dp"
+        android:text="Aqui la tienda"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/labelUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/labelTienda"
+        android:layout_marginTop="80dp"
+        android:text="Usuario:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textUsuario"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/labelUsuario"
+        android:layout_marginStart="129dp"
+        android:text="Aqui el usuario"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/labelFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/labelTienda"
+        android:layout_marginTop="105dp"
+        android:text="Fecha:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textFecha"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/labelFecha"
+        android:layout_marginStart="129dp"
+        android:text="Aqui la fecha"
+        android:textSize="20dp" />
+
 
 </RelativeLayout>

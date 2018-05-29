@@ -11,21 +11,39 @@
         android:id="@+id/btnInventarios"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp"
         android:height="100dp"
         android:text="Inventarios" />
 
 
     <Button
-        android:id="@+id/btnCargarFichero"
+        android:id="@+id/btnGestionArticulos"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:height="100dp"
+        android:text="Gestión Articulos" />
+
+
+    <Button
+        android:id="@+id/btnCargarPruebas"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="115dp"
+        android:layout_alignParentEnd="true"
         android:height="100dp"
-        android:text="Cargar Fichero" />
+        android:text="Cargar Datos Pruebas" />
+
+
+    <Button
+        android:id="@+id/btnGestionUsuarios"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:height="100dp"
+        android:text="Gestión Usuarioso" />
 
 </RelativeLayout>

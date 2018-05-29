@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textUsuario"
+        android:layout_marginTop="93dp"
+        android:text="Usuario:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/textUsuario"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp"
+        android:hint="Escriba su usuario aquí"
+        style="@android:border"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textPassword"
+        android:layout_alignStart="@+id/textUsuario"
+        android:text="Contraseña:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Contraseña aquí"
+        android:inputType="textPassword" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="165dp"
+        android:text="Acceder" />
+
+</RelativeLayout>
