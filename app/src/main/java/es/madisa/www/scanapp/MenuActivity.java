@@ -18,11 +18,9 @@ import es.madisa.www.scanapp.utilidades.Utilidades;
 public class MenuActivity extends AppCompatActivity {
 
     private Button btnInventarios;
-    private Button btnCargarPruebas;
+    private Button btnConexionesGsBase;
     private Button btnGestionUsuarios;
-    private Button btnGestionArticulos;
     private Usuario userLogin;
-
 
 
     private ConexionSQLiteHelper conn;
@@ -37,14 +35,13 @@ public class MenuActivity extends AppCompatActivity {
 
 
         btnInventarios = findViewById(R.id.btnInventarios);
-        btnCargarPruebas = findViewById(R.id.btnCargarPruebas);
+        btnConexionesGsBase = findViewById(R.id.btnConexionesGsBase);
         btnGestionUsuarios = findViewById(R.id.btnGestionUsuarios);
-        btnGestionArticulos = findViewById(R.id.btnGestionArticulos);
+
         conn=new ConexionSQLiteHelper(this, Utilidades.DB_NAME,null,1);
         inventarios();
-        cargarDatosPruebas();
+        gestionGsBase();
         gestionUsuarios();
-        GestionArticulos();
     }
 
 
@@ -58,47 +55,12 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 
-    public void cargarDatosPruebas(){
-        btnCargarPruebas.setOnClickListener(new View.OnClickListener(){
+    public void gestionGsBase(){
+        btnConexionesGsBase.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                SQLiteDatabase db = conn.getWritableDatabase();
-
-                try{
-                    db.execSQL("DELETE FROM "+Utilidades.TABLA_EANS);
-                    db.execSQL("DELETE FROM "+Utilidades.TABLA_ARTICULOS);
-                    //cargamos articulos
-                    ContentValues values = new ContentValues();
-                    values.put(Utilidades.ARTICULOS_CAMPO_CODARTICULO,"0001");
-                    values.put(Utilidades.ARTICULOS_CAMPO_NOMBRE,"Pulsera");
-                    db.insert(Utilidades.TABLA_ARTICULOS,Utilidades.ARTICULOS_CAMPO_ID,values);
-
-                    values = new ContentValues();
-                    values.put(Utilidades.ARTICULOS_CAMPO_CODARTICULO,"0002");
-                    values.put(Utilidades.ARTICULOS_CAMPO_NOMBRE,"Reloj");
-                    db.insert(Utilidades.TABLA_ARTICULOS,Utilidades.ARTICULOS_CAMPO_ID,values);
-                    //cargamos enas
-
-                    values = new ContentValues();
-                    values.put(Utilidades.EANS_CAMPO_CODARTICULO,"0001");
-                    values.put(Utilidades.EANS_CAMPO_EAN,"8412742808349");
-                    db.insert(Utilidades.TABLA_EANS,Utilidades.EANS_CAMPO_ID,values);
-
-                    values = new ContentValues();
-                    values.put(Utilidades.EANS_CAMPO_CODARTICULO,"0001");
-                    values.put(Utilidades.EANS_CAMPO_EAN,"8412742808999");
-                    db.insert(Utilidades.TABLA_EANS,Utilidades.EANS_CAMPO_ID,values);
-
-                    values.put(Utilidades.EANS_CAMPO_CODARTICULO,"0002");
-                    values.put(Utilidades.EANS_CAMPO_EAN,"2500742808999");
-                    db.insert(Utilidades.TABLA_EANS,Utilidades.EANS_CAMPO_ID,values);
-
-                    Toast.makeText(getApplicationContext(),"Datos creado correctamente",Toast.LENGTH_LONG).show();
-                } catch (Exception ex){
-                    Toast.makeText(getApplicationContext(),"Error al generar datos de prueba",Toast.LENGTH_LONG).show();
-                    ex.printStackTrace();
-                } finally {
-                    db.close();
-                }
+                Intent myIntent = new Intent(MenuActivity.this, GestionGsBaseActivity.class);
+                myIntent.putExtra("userLogin",userLogin);
+                startActivity(myIntent);
                     }
         });
 
@@ -108,12 +70,13 @@ public class MenuActivity extends AppCompatActivity {
         btnGestionUsuarios.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent myIntent = new Intent(MenuActivity.this, GestionUsuariosActivity.class);
+                myIntent.putExtra("userLogin",userLogin);
                 startActivity(myIntent);
             }
         });
     }
 
-
+/*
     public void GestionArticulos(){
         btnGestionArticulos.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -122,6 +85,13 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+*/
+    @Override
+    public void onBackPressed() {
+        if(userLogin!=null){
+            return;
+        }
+        super.onBackPressed();
 
-
+    }
 }

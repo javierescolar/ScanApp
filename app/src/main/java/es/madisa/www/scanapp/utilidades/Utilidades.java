@@ -1,5 +1,8 @@
 package es.madisa.www.scanapp.utilidades;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Utilidades {
     public static final String USERADMIN="rootadmin";
     public static final String PASSADMIN="SecretAdminPass";
@@ -77,8 +80,10 @@ public class Utilidades {
     public static final int INVENTARIO_ARTICULOS_IDX_CAMPO_CODINVENTARIO=2;
     public static final String INVENTARIO_ARTICULOS_CAMPO_CODARTICULO="cod_articulo";
     public static final int INVENTARIO_ARTICULOS_IDX_CAMPO_CODARTICULO=3;
+    public static final String INVENTARIO_ARTICULOS_CAMPO_UNIDADES="unidades";
+    public static final int INVENTARIO_ARTICULOS_IDX_CAMPO_UNIDADES=4;
     public static final String INVENTARIO_ARTICULOS_CAMPO_FECHA="fecha";
-    public static final int INVENTARIO_ARTICULOS_IDX_CAMPO_FECHA=4;
+    public static final int INVENTARIO_ARTICULOS_IDX_CAMPO_FECHA=5;
 
 /*
     Es necesario diferenciar que en esta tabla necesitamos guardar el id del inventario que se esta realizando en el terminal
@@ -137,6 +142,20 @@ public class Utilidades {
                     +INVENTARIO_ARTICULOS_CAMPO_IDINVENTARIO+" INTEGER, "
                     +INVENTARIO_ARTICULOS_CAMPO_CODINVENTARIO+" TEXT, "
                     +INVENTARIO_ARTICULOS_CAMPO_CODARTICULO+" TEXT, "
+                    +INVENTARIO_ARTICULOS_CAMPO_UNIDADES+" INTEGER, "
                     +INVENTARIO_ARTICULOS_CAMPO_FECHA+" TEXT "
                     +")";
+
+
+    public static String fechaHoraNowString(){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+
+        String strDate = sdf.format(date);
+
+        sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        strDate = sdf.format(date);
+
+        return strDate;
+    }
 }

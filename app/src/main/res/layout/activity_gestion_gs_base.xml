@@ -4,33 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GestionUsuariosActivity">
+    tools:context=".GestionGsBaseActivity">
 
     <Button
+        android:id="@+id/btnActuUsuarios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnInsertar"
-        android:text="Insertar Usuario"
-        style="@style/botonesGestion"/>
-
-    <Button
-        android:id="@+id/btnConsultarUsuarios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnInsertar"
-        android:text="Consultar Usuarios"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Cargar usuarios de GsBase"
         style="@style/botonesGestion"
         />
 
     <Button
-        android:id="@+id/btnListView"
+        android:id="@+id/btnActuArticulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnConsultarUsuarios"
-        android:text="Consultar Usuarios"
+        android:text="Cargar artículos de GsBase"
         style="@style/botonesGestion"
+        android:layout_below="@+id/btnActuUsuarios"
         />
-
 
 
 </RelativeLayout>

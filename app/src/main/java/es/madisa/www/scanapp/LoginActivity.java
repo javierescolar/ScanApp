@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin=findViewById(R.id.btnLogin);
 
         conn = new ConexionSQLiteHelper(this, Utilidades.DB_NAME,null,1);
-        DatosPruebas();
+        creaUsuarioAdmin();
         login();
     }
 
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         textPassword.setText("");
     }
 
-    public void DatosPruebas(){
+    public void creaUsuarioAdmin(){
         SQLiteDatabase db = conn.getWritableDatabase();
 
         try{
@@ -112,15 +112,15 @@ public class LoginActivity extends AppCompatActivity {
             db.execSQL("DELETE FROM "+Utilidades.TABLA_USUARIOS);
             //cargamos articulos
             ContentValues values = new ContentValues();
-            values.put(Utilidades.USUARIOS_CAMPO_CODUSUARIO,"jescolar");
-            values.put(Utilidades.USUARIOS_CAMPO_NOMBRE,"Javier Escolar");
+            values.put(Utilidades.USUARIOS_CAMPO_CODUSUARIO,"admin");
+            values.put(Utilidades.USUARIOS_CAMPO_NOMBRE,"admin");
             values.put(Utilidades.USUARIOS_CAMPO_PASS,"123");
-            values.put(Utilidades.USUARIOS_CAMPO_TIENDA,"001");
+            values.put(Utilidades.USUARIOS_CAMPO_TIENDA,"000");
             db.insert(Utilidades.TABLA_USUARIOS,Utilidades.USUARIOS_CAMPO_ID,values);
 
             values = new ContentValues();
-            values.put(Utilidades.TIENDAS_CAMPO_CODTIENDA,"001");
-            values.put(Utilidades.TIENDAS_CAMPO_NOMBRE,"Alicante");
+            values.put(Utilidades.TIENDAS_CAMPO_CODTIENDA,"000");
+            values.put(Utilidades.TIENDAS_CAMPO_NOMBRE,"Central");
             db.insert(Utilidades.TABLA_TIENDAS,Utilidades.TIENDAS_CAMPO_ID,values);
             //cargamos enas
             Toast.makeText(getApplicationContext(),"Datos creado correctamente",Toast.LENGTH_LONG).show();

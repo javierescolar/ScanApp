@@ -24,7 +24,8 @@
         <activity android:name=".ConsultarListViewActivity" />
         <activity android:name=".ConsultarArticulosActivity" />
         <activity android:name=".GestionInventariosActivity" />
-        <activity android:name=".ConsultarInventariosActivity"></activity>
+        <activity android:name=".ConsultarInventariosActivity" />
+        <activity android:name=".GestionGsBaseActivity"></activity>
     </application>
 
 </manifest>

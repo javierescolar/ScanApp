@@ -16,6 +16,8 @@ public class Articulo {
     private String nombre;
     private List<Ean> eans;
     private int unidades;
+    private int id_inventario_articulos;
+
 
 
     public Articulo(){}
@@ -50,6 +52,14 @@ public class Articulo {
 
     public void agregarReferecia(Ean ean){ this.eans.add(ean); }
 
+    public int getId_inventario_articulos() {
+        return id_inventario_articulos;
+    }
+
+    public void setId_inventario_articulos(int id_inventario_articulos) {
+        this.id_inventario_articulos = id_inventario_articulos;
+    }
+
     public static Articulo obtenArticuloPorCodigo(ConexionSQLiteHelper conn, String cod_articulo) throws Exception{
         Articulo art = new Articulo();
 
@@ -69,6 +79,13 @@ public class Articulo {
         art.setEans(eans);
         db.close();
  ;
+        return art;
+    }
+
+    public static Articulo obtenerArticuloPorReferencia(ConexionSQLiteHelper conn, String referencia) throws Exception{
+        Articulo art = new Articulo();
+        Ean eanEncontrado = Ean.buscarEan(conn,referencia);
+        art = Articulo.obtenArticuloPorCodigo(conn,eanEncontrado.getCod_articulo());
         return art;
     }
 

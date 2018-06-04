@@ -26,7 +26,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="122dp"
         android:hint="Escriba su usuario aquí"
-        style="@android:border"
         android:inputType="text" />
 
     <TextView

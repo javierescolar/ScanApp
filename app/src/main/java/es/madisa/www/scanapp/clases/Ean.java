@@ -39,8 +39,13 @@ public class Ean {
         List<Ean> eans = new ArrayList<>();
         SQLiteDatabase db = conn.getReadableDatabase();
 
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ Utilidades.TABLA_EANS +" WHERE "+Utilidades.EANS_CAMPO_CODARTICULO+" = "+cod_articulo ,null);
-
+        String[] parametros = {cod_articulo};
+        String[] camposVisualizar = {
+                Utilidades.EANS_CAMPO_ID,
+                Utilidades.EANS_CAMPO_CODARTICULO,
+                Utilidades.EANS_CAMPO_EAN
+        };
+        Cursor cursor = db.query(Utilidades.TABLA_EANS, camposVisualizar, Utilidades.EANS_CAMPO_CODARTICULO+"=?",parametros,null,null,null);
         Ean ean = null;
         while(cursor.moveToNext()){
             ean=new Ean();
@@ -50,6 +55,25 @@ public class Ean {
             eans.add(ean);
         }
         return eans;
+    }
+
+    public static Ean buscarEan(ConexionSQLiteHelper conn, String referencia) throws Exception{
+        Ean ean = new Ean();
+        SQLiteDatabase db = conn.getReadableDatabase();
+        String[] parametros = {referencia};
+        String[] camposVisualizar = {
+                Utilidades.EANS_CAMPO_ID,
+                Utilidades.EANS_CAMPO_CODARTICULO,
+                Utilidades.EANS_CAMPO_EAN
+        };
+        Cursor cursor = db.query(Utilidades.TABLA_EANS, camposVisualizar, Utilidades.EANS_CAMPO_EAN+"=?",parametros,null,null,null);
+        cursor.moveToFirst();
+        ean.setId(cursor.getInt(Utilidades.EANS_IDX_CAMPO_ID));
+        ean.setCod_articulo(cursor.getString(Utilidades.EANS_IDX_CAMPO_CODARTICULO));
+        ean.setNum_ean(cursor.getString(Utilidades.EANS_IDX_CAMPO_NUMEAN));
+        db.close();
+
+        return ean;
     }
 
 

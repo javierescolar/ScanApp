@@ -9,41 +9,41 @@
 
     <Button
         android:id="@+id/btnInventarios"
-        android:layout_width="185dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:height="100dp"
-        android:text="Inventarios" />
+        android:text="Inventarios"
+        style="@style/botonesGestion"
+        />
 
-
+<!--
     <Button
         android:id="@+id/btnGestionArticulos"
-        android:layout_width="185dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:height="100dp"
+        android:layout_below="@+id/btnInventarios"
+        style="@style/botonesGestion"
         android:text="Gestión Articulos" />
 
+-->
 
-    <Button
-        android:id="@+id/btnCargarPruebas"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:height="100dp"
-        android:text="Cargar Datos Pruebas" />
 
 
     <Button
         android:id="@+id/btnGestionUsuarios"
-        android:layout_width="185dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:height="100dp"
-        android:text="Gestión Usuarioso" />
+        android:layout_below="@+id/btnInventarios"
+        style="@style/botonesGestion"
+        android:text="Gestión Usuarios" />
+
+    <Button
+        android:id="@+id/btnConexionesGsBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnGestionUsuarios"
+        style="@style/botonesGestion"
+        android:text="Conexiones GsBase" />
 
 </RelativeLayout>
